@@ -1,0 +1,180 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon site !</title>
+    <link rel="stylesheet" type="text/css" href="resources/style.css">
+</head>
+
+<body class="nologin">
+    <div class="topbar">
+        <img src="resources/logo.png">
+        <a href="index.html" class="logolink">Mon site !</a>
+        <span class="menu">
+            <a href="#login" id="loginBtn">S'authentifier</a>
+            <a href="#register" id="registerBtn">S'inscrire</a>
+            <a href="#" id="logoutBtn" class="nologin">Se déconnecter</a>
+        </span>
+    </div>
+    <div class="main">
+        <div class="menu">
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#profile" class="nologin">Changer le mdp</a></li>
+                <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
+                <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
+                <li><a href="#listUploads" class="nologin">Liste des fichiers</a></li>
+            </ul>
+        </div>
+        <div class="page flex" id="home">
+            <br>
+            <h1 style="text-align:center">Bienvenue sur notre site.</h1> <br>
+            <br>
+            <h4 id="info" style="text-align:center">Veuillez vous inscrire ou vous authentifier pour continuer.</h4>
+        </div>
+        <div class="page flex" id="login">
+            <div class="box">
+                <form>
+                    <div class="boxtop">
+                        <div>
+                            <label for="inputlogin">Authentifiant</label> : <input type="text" name="login"
+                                id="inputlogin">
+                        </div>
+                        <div>
+                            <label for="inputpassword">Mdp</label> : <input type="password" name="password"
+                                id="inputpassword">
+                        </div>
+                        <div class="error"></div>
+                    </div>
+                    <hr>
+                    <input type="submit" value="Annuler" class="roundedButton">
+                    <input type="submit" value="Ok" class="roundedButton">
+                </form>
+            </div>
+        </div>
+        <div class="page flex" id="register">
+            <h1>Bienvenue sur notre site.</h1> <br>
+            <br>
+            <h4>Formulaire d'inscription</h4>
+            <div>
+                <div class="box">
+                    <form>
+                        <div class="boxtop">
+                            <div>
+                                <label for="login">Identifiant</label> : <input type="text" id="login" name="login"
+                                    value="">
+                            </div>
+                            <div>
+                                <label for="name">Votre nom</label> : <input type="text" id="name" name="name" value="">
+                            </div>
+                            <div>
+                                <label for="password1">Mot de passe</label> : <input type="password" id="password1"
+                                    name="password1" value="">
+                            </div>
+                            <div>
+                                <label for="password2">Mot de passe répété</label> : <input type="password"
+                                    id="password2" name="password2" value="">
+                            </div>
+                        </div>
+                        <hr>
+                        <input type="submit" value="Annuler" class="roundedButton">
+                        <input type="submit" value="Ok" class="roundedButton">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="page flex" id="profile">
+            <h4>Changement du mot de passe</h4>
+            <div class="box">
+                <form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="password1">Mot de passe actuel :</label></td>
+                                <td><input type="password" id="password1" name="password1"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password2">Nouveau mot de passe :</label></td>
+                                <td><input type="password" id="password2" name="password2"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="password3">Nouveau mot de passe répété :</label></td>
+                                <td><input type="password" id="password3" name="password3"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="error"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input id="newPassword" type="submit" class="roundedButton"
+                                        value="Changer le mot de passe"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="page" id="listUsers">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="page flex" id="upload">
+            <h4>Formulaire d'upload</h4>
+            <div>
+                <div class="box">
+                    <form data-id="form">
+                        <div class="boxtop">
+                            <div> 
+
+                            </div>
+                            <div>
+                                <label for="ufile">Fichier</label> : <input type="file" id="ufile" name="upload">
+                            </div>
+                            
+                        </div>
+                        <hr>
+                        <input type="submit" value="Annuler" class="roundedButton">
+                        <input type="submit" value="Ok" class="roundedButton">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="listUploads">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fichier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div>&#x24B8; 2022 Donatien Grolaux </div>
+    </div>
+    <script src="resources/mispaf.js"></script>
+    <script src="views/home.js"></script>
+    <script src="views/register.js"></script>
+    <script src="views/login.js"></script>
+    <script src="views/listUsers.js"></script>
+    <script src="views/profile.js"></script>
+    <script src="views/upload.js"></script>
+    <script src="views/listUploads.js"></script>
+    <script>
+        // Leave this script at the bottom of this page
+        mispaf.page('home');
+        mispaf.setMenu(document.querySelector('.topbar .menu'));
+        mispaf.setMenu(document.querySelector('.main .menu'));
+    </script>
+</body>
+
+</html>

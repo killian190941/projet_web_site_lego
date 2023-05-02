@@ -1,0 +1,214 @@
+body {
+    margin:0px 0px 0px 0px;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.topbar {
+    display:flex;
+    flex-direction: row;
+    background-color:lightblue;
+    align-items: center;
+}
+
+.topbar img {
+    max-height:50px;
+}
+
+.topbar img + a {
+    flex-grow: 1;
+}
+
+.topbar a, .toolbar a:visited {
+    text-decoration: none;
+    color:black;
+    font-size:24px;
+}
+
+.topbar span {
+    font-size: 24px;
+}
+
+.topbar span button, .topbar span a {
+    border:solid 1px black;
+    border-radius:12px;
+    background-color: black;
+    color:white;
+    padding:6px 6px 6px 6px;
+    margin-right: 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-size:20px;
+    font-family:sans-serif;
+}
+
+.roundedButton {
+    float:right;
+    margin-right:2px;
+    border:solid 1px black;
+    border-radius:12px;
+    background-color: black;
+    color:white;
+    padding:3px 10px 3px 10px;
+    margin-right: 4px;
+    vertical-align: middle;
+    font-size:14px;
+    font-family:sans-serif;
+    cursor:pointer;
+    text-decoration: none;
+}
+
+.error {
+    color:red;
+}
+
+.footer {
+    display:flex;
+    background-color:gray;
+    align-items: flex-end;
+    color:white;
+    padding-bottom: 4px;
+    padding-right: 10px;
+    border-top: solid 1px black;
+}
+
+.footer div {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.main {
+    display:flex;
+    flex-grow:1;
+    flex-direction: row;
+}
+
+.menu {
+    background-color:lightgray;
+    border-right:solid 1px gray;
+    margin:0xp 0px 0px 0px;
+    min-width: 100px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.menu .hidden {
+    display:none;
+}
+
+.menu .hidden a {
+    cursor: not-allowed;
+    text-decoration: none;
+    color:currentColor;
+}
+
+.menu .hidden.menuSelected {
+    display:list-item;
+}
+
+.center {
+    flex-grow: 1;
+    padding:10px 10px 10px 10px;
+}
+
+.menuSelected {
+    font-weight: bold;
+}
+
+.menuSelected:before {
+    font-weight: bold;
+    content:"\25B6";
+}
+
+.subscribe {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.subscribe * {
+    text-align: center;
+}
+
+.subscribe table * {
+    text-align: left;
+}
+
+.subscribe table td:first-child {
+    text-align: right;
+}
+
+.profile td:first-child {
+    min-width:200px;
+}
+
+#loginBtn, #registerBtn {
+    display:none;
+}
+
+.nologin #loginBtn {
+    display:inline;
+}
+
+.nologin #registerBtn {
+    display:inline;
+}
+
+body.nologin .nologin {
+    display:none;
+}
+
+.page {
+    display:none;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.active {
+    display:block;
+}
+
+.flex.active, .flex.active, .flex.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.box form {
+    background-color: white;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    border: solid 3px black;
+}
+
+.box form label {
+    width:100px;
+    display:inline-block;
+}
+
+#register .box form label {
+    width:200px;
+}
+
+#profile .box form label {
+    width:200px;
+}
+
+#listUsers table {
+    border-collapse: collapse;
+}
+
+#listUsers table td, #listUsers table th {
+    border:solid 1px black;
+}
