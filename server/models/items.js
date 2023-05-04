@@ -1,8 +1,8 @@
 module.exports = ({ db }) => {
 
     return {
-        publish({title, description, user_id}){
-            db.prepare("INSERT INTO pictures(title,description) value(?,?)").run(title,description,useur_id);
+        add({title, description,path, user_id}){
+            db.prepare("INSERT INTO pictures(title, description,path, owner_id) value(?,?,?,?)").run(title,description,path, user_id);
         }
     }
 
