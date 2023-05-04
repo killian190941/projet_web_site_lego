@@ -1,12 +1,13 @@
-const fs=require("fs");
-const path=require("path");
+const fs = require("fs");
+const path = require("path");
 
-module.exports={
-    publish({params,model, HTTPError}){ /* nom du chemin cree dans publish.js dans la requète url; url:"/items/publish", */
-    if (params.title=="") throw new HTTPError("il faut un titre",406);
-    if (params.description=="") throw new HTTPError("il faut une description",406);
-    model.publish.items({title:params.title,description:params.description});
-}}
+module.exports = {
+    publish({ params, model, HTTPError }) { /* nom du chemin cree dans publish.js dans la requète url; url:"/items/publish", */
+        if (params.title == "") throw new HTTPError("il faut un titre", 406);
+        if (params.description == "") throw new HTTPError("il faut une description", 406);
+        model.items.publish({ title: params.title, description: params.description });
+    } //le itemps est le fichier dans le model, le publish la fonction il fait encore pouvoir upload le fichier, celui ci est pris en charge par mispadf
+}
 /*    upload({params, config}) {
         for(let i=0; i<params.upload.length; i++) {
             let filename=path.join(config.uploadDirectory,params.upload[i].name);
