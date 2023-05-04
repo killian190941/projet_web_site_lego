@@ -20,7 +20,7 @@
         <div class="menu">
             <ul>
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#profile" class="nologin">Changer le mdp</a></li>
+                <li><a href="#profile" class="nologin">Modifier le profil</a></li>
                 <li><a href="#publish" class="nologin">publish</a></li>
                 <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
                 <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
@@ -76,6 +76,9 @@
                                 <label for="password2">Mot de passe répété</label> : <input type="password"
                                     id="password2" name="password2" value="">
                             </div>
+                            <div>
+                                <label for="email1">Email</label> : <input type="email" id="email1" name="email1" value="">
+                            </div>
                         </div>
                         <hr>
                         <input type="submit" value="Annuler" class="roundedButton">
@@ -85,7 +88,7 @@
             </div>
         </div>
         <div class="page flex" id="profile">
-            <h4>Changement du mot de passe</h4>
+            <h4>Modifier le profil</h4>
             <div class="box">
                 <form>
                     <table>
@@ -108,6 +111,27 @@
                             <tr>
                                 <td colspan="2"><input id="newPassword" type="submit" class="roundedButton"
                                         value="Changer le mot de passe"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="email1">Email actuel :</label></td>
+                                <td><input type="email1" id="email1" name="email1"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email2">Nouvel email :</label></td>
+                                <td><input type="email2" id="email2" name="email2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="error"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input id="newEmail" type="submit" class="roundedButton"
+                                        value="Changer l'email"></td>
                             </tr>
                         </tbody>
                     </table>

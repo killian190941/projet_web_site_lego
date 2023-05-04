@@ -2,7 +2,7 @@ module.exports = ({ db }) => {
 
     return {
         register(user) {
-            db.prepare("INSERT INTO users(login,password) VALUES (?,?)").run(user.login, user.password);
+            db.prepare("INSERT INTO users(login,password,email) VALUES (?,?,?)").run(user.login, user.password, user.email);
         },
         getByLogin(login) {
             return db.prepare("SELECT * FROM users WHERE login=?").get(login);

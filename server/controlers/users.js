@@ -20,6 +20,10 @@ module.exports = {
             throw new HTTPError("Nouveau mot de passe manquant.",422);
         } else if (params.password2!=params.password3) {
             throw new HTTPError("Les mot de passe sont différents.",422);
+        } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(params.password2)) {
+            throw new HTTPError("Le nouveau mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule et un chiffre.",422);
+        } else if (params.password2.length < 8) {
+            throw new HTTPError("Le nouveau mot de passe doit contenir minimum 8 caractères.",422);
         }
         let hash = await bcrypt.hash(params.password2, 10);
         model.users.updatePassword(user.id,hash);
