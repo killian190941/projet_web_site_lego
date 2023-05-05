@@ -19,7 +19,7 @@
             data: form, // ne pas changer la methode form qui est une fonction de mispaf qui s'occupe d'envoyer les fichier
 
             success() {
-                alert("publié");
+                alert("fichier publié");
                 mispaf.page(mispaf.page()); // refresh
             },
             error(message) {

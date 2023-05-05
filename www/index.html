@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="#home">Accueil</a></li>
                 <li><a href="#profile" class="nologin">Modifier le profil</a></li>
-                <li><a href="#publish" class="nologin">publish</a></li>
+                <li><a href="#publish" class="nologin">Publier un fichier</a></li>
                 <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
                 <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
                 <li><a href="#listUploads" class="nologin">Liste des fichiers</a></li>
@@ -152,25 +152,24 @@
         </div>
         <div class="page flex" id="publish">
             <h4>Formulaire de publication d'un post</h4>
-            <div>
                 <div class="box">
                     <form data-id="form">
                         <div class="boxtop">
                             <div>
                                 <tr>
                                     <td><label for="title">titre :</label></td>
-                                    <td><input type="titre" id="titre" name="titre"></td>
+                                    <td><input type="text" id="title" name="title"></td>
                                 </tr>
 
                             </div>
                             <div>
-                                <label for="ufile">Fichier</label> : <input type="file" id="ufile" name="upload">
+                                <tr>
+                                    <td><label for="description">Description :</label></td>
+                                    <td><textarea id="description" name="description"></textarea></td>
+                                </tr>
                             </div>
                             <div>
-                                <tr>
-                                    <td><label for="description">description :</label></td>
-                                    <td><textarea type="description" id="description" name="description"></textarea></td>
-                                </tr>
+                                <label for="ufile">Fichier</label> : <input type="file" id="ufile" name="upload">
                             </div>
                         </div>
                         <hr>
@@ -178,7 +177,6 @@
                         <input type="submit" value="Ok" class="roundedButton">
                     </form>
                 </div>
-            </div>
         </div>
         <div class="page flex" id="upload">
             <h4>Formulaire d'upload</h4>
