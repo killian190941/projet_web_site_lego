@@ -6,7 +6,7 @@
         mispaf.reset(form);
     });
 
-    form.querySelector('input[type=submit').addEventListener('click',(event)=>{
+    form.querySelector('input[type=submit]').addEventListener('click',(event)=>{
         event.preventDefault();
         mispaf.ajax({
             url:"/users/changePassword",
