@@ -19,7 +19,8 @@
             data:document.querySelector('#register form'),
             success() {
                 alert("Bravo, vous êtes enregistré mais vous devez encore vous connecter.");
-                mispaf.page('home');
+                mispaf.page('login');
+                mispaf.reset(document.querySelector('#login form'));
             },
             error(message) {
                 alert(message);

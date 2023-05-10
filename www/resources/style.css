@@ -212,3 +212,29 @@ body.nologin .nologin {
 #listUsers table td, #listUsers table th {
     border:solid 1px black;
 }
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.image-container .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
