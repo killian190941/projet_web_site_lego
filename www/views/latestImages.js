@@ -2,7 +2,7 @@ mispaf.addPageListener("enter:home", (event) => {
     let container = document.querySelector('#home .image-container');
     container.innerHTML = '';
     mispaf.ajax({
-        url: "/file/latestImages",
+        url: "/latestImages/latestImages",
         type: 'POST',
         success(response) {
             let images = [];
