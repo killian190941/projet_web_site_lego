@@ -167,6 +167,23 @@ body.nologin .nologin {
     display:none;
 }
 
+body:not(.nologin) #description_concept {
+    display: none;
+}
+
+body:not(.nologin) .image-container {
+    display: none;
+}
+
+.image-container,
+#lastImages .image-container,
+#otherUser .image-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
 .page {
     display:none;
     min-width: 100%;
@@ -211,13 +228,6 @@ body.nologin .nologin {
 
 #listUsers table td, #listUsers table th {
     border:solid 1px black;
-}
-
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    justify-items: center;
 }
 
 .image-container .image {

@@ -4,11 +4,11 @@ mispaf.addPageListener('enter:home', () => {
         type: 'POST',
         success(response) {
             if (response != null) {
-                mispaf.user = response.login;
+                user = response.login;
                 document.body.classList.remove("nologin");
-                document.getElementById('info').innerText="Bienvenue "+mispaf.user+" !"
+                document.getElementById('info').innerText="Bienvenue "+user+" !"
             } else {
-                mispaf.user = null;
+                user = null;
                 document.body.classList.add("nologin");
                 document.getElementById('info').innerText="Veuillez vous inscrire ou vous authentifier pour continuer"
             }

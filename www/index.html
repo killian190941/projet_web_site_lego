@@ -25,6 +25,7 @@
                 <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
                 <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
                 <li><a href="#listUploads" class="nologin">Liste des fichiers</a></li>
+                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
             </ul>
         </div>
         <div class="page flex" id="home">
@@ -33,7 +34,14 @@
             <br>
             <h4 id="info" style="text-align:center">Veuillez vous inscrire ou vous authentifier pour continuer.</h4>
             <div class="image-container"></div>
-        </div>        
+        </div>
+        <div class="page flex" id="otherUser">
+            <br>
+            <h1 id="nameUser" style="text-align:center"></h1><br>
+            <br>
+            <h3 style="text-align:center">Images :</h3>
+            <div class="image-container"></div>
+        </div>         
         <div class="page flex" id="login">
             <h1>Authentifiez vous!</h1> <br>
             <br>
@@ -216,13 +224,19 @@
                 </tbody>
             </table>
         </div>
+        <div class="page flex" id="lastImages">
+            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
+            <div class="image-container"></div>
+        </div>
     </div>
     <div class="footer">
         <div>&#x24B8; 2022 Donatien Grolaux </div>
     </div>
     <script src="resources/mispaf.js"></script>
     <script src="views/home.js"></script>
+    <script src="views/otherUser.js"></script>
     <script src="views/latestImages.js"></script>
+    <script src="views/lastImages.js"></script>
     <script src="views/publish.js"></script>
     <script src="views/register.js"></script>
     <script src="views/login.js"></script>

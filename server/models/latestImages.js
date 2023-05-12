@@ -1,4 +1,5 @@
 module.exports = ({ db }) => {
+    
     return {
         getLatestImages() {
             let result = db.prepare(`SELECT users.login, pictures.title, pictures.path 

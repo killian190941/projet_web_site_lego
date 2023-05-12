@@ -1,5 +1,5 @@
-mispaf.addPageListener("enter:home", (event) => {
-    let container = document.querySelector('#home .image-container');
+mispaf.addPageListener("enter:lastImages", (event) => {   
+    let container = document.querySelector('#lastImages .image-container');
     container.innerHTML = '';
     mispaf.ajax({
         url: "/latestImages/latestImages",
