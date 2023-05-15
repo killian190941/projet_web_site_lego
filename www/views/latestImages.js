@@ -1,4 +1,4 @@
-mispaf.addPageListener("enter:home", (event) => {
+mispaf.addPageListener("enter:home", (enter) => {
     let container = document.querySelector('#home .image-container');
     container.innerHTML = '';
     mispaf.ajax({
@@ -10,8 +10,8 @@ mispaf.addPageListener("enter:home", (event) => {
                 images.push(`
 <div class="image">
     <img src="${mispaf.escape(response.files[i].path)}" alt="${mispaf.escape(response.files[i].title)}">
-    <h3>${mispaf.escape(response.files[i].title)}</h3>
-    <a href="#" onclick="showOtherUser('${mispaf.escape(response.files[i].username)}')"> ${mispaf.escape(response.files[i].username)}</a>
+    <h3 id="titre">${mispaf.escape(response.files[i].title)}</h3>
+    <a id="userLink" href="#" onclick="showOtherUser('${mispaf.escape(response.files[i].username)}')"> ${mispaf.escape(response.files[i].username)}</a>
 </div>
 `);
             }
@@ -22,3 +22,11 @@ mispaf.addPageListener("enter:home", (event) => {
         }
     });
 })
+
+let otherUserName=null;
+
+function showOtherUser(username) {
+    event.preventDefault();
+    otherUserName=username;
+    mispaf.page('otherUser');
+}

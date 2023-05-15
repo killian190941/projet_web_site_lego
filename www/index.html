@@ -8,8 +8,8 @@
 
 <body class="nologin">
     <div class="topbar">
-        <img src="resources/logo.png">
-        <a href="index.html" class="logolink">Mon site !</a>
+        <img src="resources/lEGOlogo.png">
+        <a href="index.html" class="logolink">Instagram des Adult Fan Of LEGO</a>
         <span class="menu">
             <a href="#login" id="loginBtn">S'authentifier</a>
             <a href="#register" id="registerBtn">S'inscrire</a>
@@ -19,31 +19,50 @@
     <div class="main">
         <div class="menu">
             <ul>
-                <li><a href="#home">Accueil</a></li>
+                <li><a href="#home" class="home">Accueil</a></li>
+                <li><a href="#monProfil" class="nologin">Page personnelle</a></li>
+                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
                 <li><a href="#profile" class="nologin">Modifier le profil</a></li>
-                <li><a href="#publish" class="nologin">Ajouter un objet</a></li>
+                <li><a href="#publish" class="nologin">Ajouter une image</a></li>
                 <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
                 <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
-                <li><a href="#listUploads" class="nologin">Liste des fichiers</a></li>
-                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
+                <li><a href="#listUploads" class="nologin">Liste des images</a></li>
             </ul>
         </div>
         <div class="page flex" id="home">
-            <br>
-            <h1 style="text-align:center">Bienvenue sur notre site.</h1> <br>
-            <br>
+            <h1 style="text-align:center">Bienvenue sur notre site!</h1>
             <h4 id="info" style="text-align:center">Veuillez vous inscrire ou vous authentifier pour continuer.</h4>
-            <div class="image-container"></div>
+            <h5 id="description_concept" style="text-align: center">Instagram AFOL est LE site numéro 1 des adultes fan de LEGO. Il permet aux fans de LEGO à travers le monde de partager leur créations avec d'autres adeptes. Ci-dessous, retrouvez les 10 dernières créations postées par nos membres.</h5>
+            <div class="image-container"></div> 
+        </div>
+        <div class="page flex" id="monProfil">
+            <h1 id="myInfo" style="text-align: center;"></h1>
+            <div class="grid-container">
+                <div class="left" id="mesCreas">
+                    <h4 style="text-align: center;">Mes créations</h4>
+                    <div class="image-container"></div>
+                </div>
+                <div class="right" id="mesAbos">
+                    <h4 style="text-align: center;">Mes abonnements</h4>
+                    <div class="image-container"></div>
+                </div>
+            </div>    
         </div>
         <div class="page flex" id="otherUser">
-            <br>
-            <h1 id="nameUser" style="text-align:center"></h1><br>
-            <br>
-            <h3 style="text-align:center">Images :</h3>
+            <h1 id="nameUser" style="text-align:center"></h1>
+            <span class="nologin">
+                <a href="#" id="subscribeBtn" class="roundedButton sub">S'abonner</a>
+                <a href="#" id="unSubscribeBtn" class="roundedButton nosub">Se désabonner</a>
+            </span>
+            <h3 style="text-align:center">Ses créations :</h3>
             <div class="image-container"></div>
-        </div>         
+        </div>
+        <div class="page" id="lastImages">
+            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
+            <div class="image-container"></div>
+        </div>   
         <div class="page flex" id="login">
-            <h1>Authentifiez vous!</h1> <br>
+            <h1>Authentifiez-vous!</h1> <br>
             <br>
             <h4>Authentification</h4>
             <div class="box">
@@ -101,7 +120,8 @@
         </div>
         <div class="page flex" id="profile">
             <h4>Modifier le profil</h4>
-            <div class="box">
+            <div class="box" id="newMDP">
+                <h5>Modifier le mot de passe</h5>
                 <form>
                     <table>
                         <tbody>
@@ -121,33 +141,36 @@
                                 <td colspan="2" class="error"></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><input id="newPassword" type="submit" class="roundedButton"
-                                        value="Changer le mot de passe"></td>
+                                <td colspan="2"><input id="newPassword" type="submit" class="roundedButton" value="Ok"></td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
+            </div>
+            <div class="box" id="newMail">    
+                <tr>
+                </tr>
+                <h5>Modifier l'email</h5>
                 <form>
                     <table>
                         <tbody>
                             <tr>
                                 <td><label for="email1">Email actuel :</label></td>
-                                <td><input type="email1" id="email1" name="email1"></td>
+                                <td><input type="email" id="email1" name="email1"></td>
                             </tr>
                             <tr>
                                 <td><label for="email2">Nouvel email :</label></td>
-                                <td><input type="email2" id="email2" name="email2"></td>
+                                <td><input type="email" id="email2" name="email2"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="error"></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><input id="newEmail" type="submit" class="roundedButton"
-                                        value="Changer l'email"></td>
+                                <td colspan="2"><input id="newEmail" type="submit" class="roundedButton" value="Ok"></td>
                             </tr>
                         </tbody>
                     </table>
-                </form>
+                </form> 
             </div>
         </div>
         <div class="page" id="listUsers">
@@ -165,7 +188,7 @@
         <div class="page flex" id="publish">
             <h4>Publication d'un post</h4>
             <div class="box">
-                <form data-id="form">
+                <form>
                     <table>
                         <tbody>
                             <tr>
@@ -185,7 +208,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2"><input id="envoyer" type="submit" class="roundedButton"
-                                    value="Ajouter l'objet"></td>
+                                    value="Ajouter image"></td>
+                                <td> <input type="submit" value="Annuler" class="roundedButton"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -199,7 +223,6 @@
                     <form data-id="form">
                         <div class="boxtop">
                             <div> 
-
                             </div>
                             <div>
                                 <label for="ufile">Fichier</label> : <input type="file" id="ufile" name="upload">
@@ -217,16 +240,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Fichier(s)</th>
+                        <h4>Fichier</h4>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
-        </div>
-        <div class="page flex" id="lastImages">
-            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
-            <div class="image-container"></div>
         </div>
     </div>
     <div class="footer">
@@ -234,6 +253,7 @@
     </div>
     <script src="resources/mispaf.js"></script>
     <script src="views/home.js"></script>
+    <script src="views/monProfil.js"></script>
     <script src="views/otherUser.js"></script>
     <script src="views/latestImages.js"></script>
     <script src="views/lastImages.js"></script>

@@ -20,7 +20,7 @@
             type: 'POST',
             data: document.querySelector('#login form'),
             success() {
-                mispaf.page('home');
+                mispaf.page('monProfil');
             },
             error(message) {
                 alert(message);

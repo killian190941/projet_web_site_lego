@@ -12,8 +12,8 @@ mispaf.addPageListener("enter:otherUser", (event) => {
                 images.push(`
 <div class="image">
     <img src="${mispaf.escape(response.files[i].path)}" alt="${mispaf.escape(response.files[i].title)}">
-    <h3>${mispaf.escape(response.files[i].title)}</h3>
-    <span>${mispaf.escape(response.files[i].description)}</span>
+    <h3 id="titre">${mispaf.escape(response.files[i].title)}</h3>
+    <span id="description">${mispaf.escape(response.files[i].description)}</span>
 </div>
 `);
             }
@@ -25,10 +25,36 @@ mispaf.addPageListener("enter:otherUser", (event) => {
     });
 })
 
-let otherUserName=null;
-
-function showOtherUser(username){
+document.getElementById("subscribeBtn").addEventListener('click',(event)=>{
     event.preventDefault();
-    otherUserName=username;
-    mispaf.page('otherUser');
-}
+    event.stopPropagation();
+    mispaf.ajax({
+        url:"subscribe/subscribe",
+        type:'POST',
+        data:{username:otherUserName},
+        success() {
+            alert("Vous vous êtes bien abonné à ce profil.");
+            mispaf.page(mispaf.page()); // refresh
+        },
+        error(message) {
+            alert(message);
+        }
+    })
+});
+
+document.getElementById("unSubscribeBtn").addEventListener('click',(event)=>{
+    event.preventDefault();
+    event.stopPropagation();
+    mispaf.ajax({
+        url:"subscribe/unsubscribe",
+        type:'POST',
+        data:{username:otherUserName},
+        success() {
+            alert("Vous vous êtes bien désabonné de ce profil.");
+            mispaf.page(mispaf.page()); // refresh
+        },
+        error(message) {
+            alert(message);
+        }
+    })
+});

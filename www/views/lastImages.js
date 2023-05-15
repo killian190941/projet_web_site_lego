@@ -11,7 +11,8 @@ mispaf.addPageListener("enter:lastImages", (event) => {
 <div class="image">
     <img src="${mispaf.escape(response.files[i].path)}" alt="${mispaf.escape(response.files[i].title)}">
     <h3>${mispaf.escape(response.files[i].title)}</h3>
-    <a href="#" onclick="showOtherUser('${mispaf.escape(response.files[i].username)}')"> ${mispaf.escape(response.files[i].username)}</a>
+    <a href="#" onclick="showOtherUser('${mispaf.escape(response.files[i].username)}')"> 
+    ${mispaf.escape(response.files[i].username)}</a>
 </div>
 `);
             }
@@ -22,3 +23,5 @@ mispaf.addPageListener("enter:lastImages", (event) => {
         }
     });
 })
+
+

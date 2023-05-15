@@ -27,5 +27,17 @@ module.exports = {
         }
         let hash = await bcrypt.hash(params.password2, 10);
         model.users.updatePassword(user.id,hash);
+    },
+    async changeMail({ model, params, user, HTTPError }) {
+        user = model.users.getByLogin(user.login);
+        if (params.email1 != user.email) {
+            throw new HTTPError("L'email actuel que vous avez entré n'existe pas",422);
+        } else if (!/\S+@\S+\.\S+/.test(params.email2)) {
+            throw new HTTPError("Le nouvel email doit contenir un @ et un .",422);
+        } else if (params.email1 == params.email2) {
+            throw new HTTPError("Vous avez entré la même adresse mail",422)
+        }
+        let newMail = params.email2;
+        model.users.updateEmail(user.id,newMail);
     }
 }

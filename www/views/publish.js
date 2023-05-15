@@ -1,23 +1,26 @@
 (()=>{
 
     let form=document.querySelector("#publish form");
+    let old=null;
 
     mispaf.addPageListener("enter:publish",(event)=>{
+        if ("leavePage" in event) old=event.leavePage;
         mispaf.reset(form);
     });
-// il faudrait valider ici que les données soient correcte
-    form.querySelector('input[type=submit]').addEventListener('click',(event)=>{
-        event.preventDefault(); //definir les variable
-        /*if (!title || !description || !fileInput.files.length) {
-            alert("Tous les champs sont obligatoires.");
-            console.log("Tous les champs sont obligatoires.")// ne fonctionne pas definir les variables
-            return;
-        } */
+
+    form.querySelector('input[value="Annuler"]').addEventListener('click',()=>{
+        if (old!=null) mispaf.page(old);
+    });
+    
+    form.querySelector('input[value="Ajouter image"]').addEventListener('click',async (event)=>{
+        if (mispaf.validateNotEmpty(form,["title","description"],"Ce champ est obligatoire")) {
+            event.preventDefault();
+        }
+        event.preventDefault(); 
         mispaf.ajax({
             url:"/items/add", // important, c'est le chemin que l'on recuper dans le controler items.js
             type:'POST',
-            data: form, // ne pas changer la methode form qui est une fonction de mispaf qui s'occupe d'envoyer les fichier
-
+            data: form, 
             success() {
                 alert("Objet publié.");
                 mispaf.page(mispaf.page()); // refresh

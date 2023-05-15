@@ -23,8 +23,8 @@ module.exports = {
             throw new HTTPError("Les mots de passe sont différents",422);
         } else if (model.users.getByLogin(params.login)) {
             throw new HTTPError("Cet identifiant est déjà utilisé par un autre utilisateur.", 422);
-        // } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(params.email)) {
-        //    throw new HTTPError("L'email doit contenir un '@' et un '.'.",422);
+        } else if (!/\S+@\S+\.\S+/.test(params.email1)) {
+            throw new HTTPError("L'email doit contenir un @ et un .",422)
         }    
         let hash = await bcrypt.hash(params.password1, 10);
         model.users.register({login:params.login, password:hash, email:params.email1});
