@@ -21,44 +21,40 @@
             <ul>
                 <li><a href="#home" class="home">Accueil</a></li>
                 <li><a href="#monProfil" class="nologin">Page personnelle</a></li>
-                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
                 <li><a href="#profile" class="nologin">Modifier le profil</a></li>
                 <li><a href="#publish" class="nologin">Ajouter une image</a></li>
                 <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
-                <li><a href="#upload" class="nologin">Envoi d'un fichier</a></li>
-                <li><a href="#listUploads" class="nologin">Liste des images</a></li>
+                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
+                <li><a href="#highScore" class="nologin">top 10 créations</a></li>
             </ul>
         </div>
         <div class="page flex" id="home">
             <h1 style="text-align:center">Bienvenue sur notre site!</h1>
             <h4 id="info" style="text-align:center">Veuillez vous inscrire ou vous authentifier pour continuer.</h4>
             <h5 id="description_concept" style="text-align: center">Instagram AFOL est LE site numéro 1 des adultes fan de LEGO. Il permet aux fans de LEGO à travers le monde de partager leur créations avec d'autres adeptes. Ci-dessous, retrouvez les 10 dernières créations postées par nos membres.</h5>
-            <div class="image-container"></div> 
+            <div class="image-container"></div>
         </div>
         <div class="page flex" id="monProfil">
             <h1 id="myInfo" style="text-align: center;"></h1>
-            <div class="grid-container">
-                <div class="left" id="mesCreas">
-                    <h4 style="text-align: center;">Mes créations</h4>
-                    <div class="image-container"></div>
-                </div>
-                <div class="right" id="mesAbos">
-                    <h4 style="text-align: center;">Mes abonnements</h4>
-                    <div class="image-container"></div>
-                </div>
-            </div>    
+            <span>
+                <h4 style="text-align: center; display: inline-block" id="pagePerso">Mes Créations</h4>
+                <input type="submit" id="switchProfil" class="roundedButton" value="mes abonnements">
+            </span>
+            <p></p>
+            <div class="grid-container" id="mesCreas">                          
+                <div class="image-container"></div>     
+            </div>   
+            <div class="grid-container invisible" id="mesAbos">
+                <div class="image-container"></div>
+            </div>   
         </div>
         <div class="page flex" id="otherUser">
             <h1 id="nameUser" style="text-align:center"></h1>
             <span class="nologin">
-                <a href="#" id="subscribeBtn" class="roundedButton sub">S'abonner</a>
-                <a href="#" id="unSubscribeBtn" class="roundedButton nosub">Se désabonner</a>
-            </span>
+                <a href="#" id="subscribeBtn" class="roundedButton">S'abonner</a>
+                <a href="#" id="unSubscribeBtn" class="roundedButton">Se désabonner</a>
+            </span>            
             <h3 style="text-align:center">Ses créations :</h3>
-            <div class="image-container"></div>
-        </div>
-        <div class="page" id="lastImages">
-            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
             <div class="image-container"></div>
         </div>   
         <div class="page flex" id="login">
@@ -136,12 +132,9 @@
                             <tr>
                                 <td><label for="password3">Nouveau mot de passe répété :</label></td>
                                 <td><input type="password" id="password3" name="password3"></td>
-                            </tr>
+                            </tr>                        
                             <tr>
-                                <td colspan="2" class="error"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input id="newPassword" type="submit" class="roundedButton" value="Ok"></td>
+                                <td><input id="newPassword" type="submit" class="roundedButton" value="Ok"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -163,17 +156,14 @@
                                 <td><input type="email" id="email2" name="email2"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="error"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input id="newEmail" type="submit" class="roundedButton" value="Ok"></td>
+                                <td><input id="newEmail" type="submit" class="roundedButton" value="Ok"></td>
                             </tr>
                         </tbody>
                     </table>
                 </form> 
             </div>
         </div>
-        <div class="page" id="listUsers">
+        <div class="page flex" id="listUsers">
             <table>
                 <thead>
                     <tr>
@@ -185,8 +175,52 @@
                 </tbody>
             </table>
         </div>
+        <div class="page flex", id="modifImage">
+            <div class="box">
+                <h3>Modification de l'image</h3>
+                <div class="image-container"></div>
+                <form id="monImage">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="title">Titre</label></td>
+                                <td><input type="text" id="newTitle" name="newTitle"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="description">Description</label></td>
+                                <td><input type="text" id="newDescription" name="newDescription"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="error"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input id="validerModif" type="submit" class="roundedButton" value="Ok"></td>
+                                <td colspan="2"><input id="annulerModif" type="submit" class="roundedButton" value="Annuler"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="page flex" id="voteImage">
+            <h1 id="titreImage" style="text-align:center"></h1>
+            <br>
+            <h2 id="scoreImage" style="text-align: center;"></h2>
+            <br>
+            <div class="image-container"></div>
+            <h3 style="text-align:center" id="voteOuPas">Quelle note donneriez vous à cette création :</h3>
+            <span id="noVote">
+                <input type="radio" class="score" name="score" value="1" checked> 1
+                <input type="radio" class="score" name="score" value="2"> 2
+                <input type="radio" class="score" name="score" value="3"> 3
+                <input type="radio" class="score" name="score" value="4"> 4
+                <input type="radio" class="score" name="score" value="5"> 5
+                <a href="#" id="validerScore" class="roundedButton">Ok</a>
+            </span>
+            <input type="submit" class="roundedButton" id="retour" value="retour">
+        </div>   
         <div class="page flex" id="publish">
-            <h4>Publication d'un post</h4>
+            <h4>Publication d'une création</h4>
             <div class="box">
                 <form>
                     <table>
@@ -216,36 +250,13 @@
                 </form>
             </div>
         </div>
-        <div class="page flex" id="upload">
-            <h4>Formulaire d'upload</h4>
-            <div>
-                <div class="box">
-                    <form data-id="form">
-                        <div class="boxtop">
-                            <div> 
-                            </div>
-                            <div>
-                                <label for="ufile">Fichier</label> : <input type="file" id="ufile" name="upload">
-                            </div>
-                            
-                        </div>
-                        <hr>
-                        <input type="submit" value="Annuler" class="roundedButton">
-                        <input type="submit" value="Ok" class="roundedButton">
-                    </form>
-                </div>
-            </div>
+        <div class="page flex" id="lastImages">
+            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
+            <div class="image-container"></div>
         </div>
-        <div class="page" id="listUploads">
-            <table>
-                <thead>
-                    <tr>
-                        <h4>Fichier</h4>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <div class="page flex" id="highScore">
+            <h2>Voici les 10 créations ayant le plus haut score sur notre site</h2>
+            <div class="image-container"></div>
         </div>
     </div>
     <div class="footer">
@@ -255,15 +266,15 @@
     <script src="views/home.js"></script>
     <script src="views/monProfil.js"></script>
     <script src="views/otherUser.js"></script>
+    <script src="views/modifImage.js"></script>
+    <script src="views/voteImage.js"></script>
     <script src="views/latestImages.js"></script>
-    <script src="views/lastImages.js"></script>
+    <script src="views/highScore.js"></script>
     <script src="views/publish.js"></script>
     <script src="views/register.js"></script>
     <script src="views/login.js"></script>
     <script src="views/listUsers.js"></script>
     <script src="views/profile.js"></script>
-    <script src="views/upload.js"></script>
-    <script src="views/listUploads.js"></script>
     <script>
         // Leave this script at the bottom of this page
         mispaf.page('home');

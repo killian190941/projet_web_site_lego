@@ -21,6 +21,7 @@ mispaf.addPageListener('enter:home', () => {
         type: 'POST',
         success(response) {
             if (response != null) {
+                //mispaf.user
                 user = response.login;
                 document.body.classList.remove("nologin");
                 document.getElementById('info').innerText="Bienvenue "+user+" !"
@@ -30,7 +31,6 @@ mispaf.addPageListener('enter:home', () => {
                 document.getElementById('info').innerText="Veuillez vous inscrire ou vous authentifier pour continuer"
                 document.getElementById('description_concept').innerText="Instagram AFOL est LE site numéro 1 des adultes fan de LEGO. \n Il permet aux fans de LEGO à travers le monde de partager leur créations avec d'autres adeptes. \n Ci-dessous, retrouvez les 10 dernières créations postées par nos membres"    
             }
-
             document.querySelector('.logolink').addEventListener('click', (event) => {
                 event.preventDefault();
                 if(user) {

@@ -5,13 +5,14 @@ module.exports = ({ db }) => {
             db.prepare("INSERT INTO pictures(title, description, path, owner_id) VALUES(?,?,?,?)").run(title, description, path, user_id);
         },
         delete(id) {
-            return db.prepare("DELETE FROM pictures WHERE id=?").run(id);
+            db.prepare("DELETE FROM scores WHERE picture_id=?").run(id);
+            db.prepare("DELETE FROM pictures WHERE id=?").run(id);
         },
         updateTitle(id,title) {
-            db.prepare("UPDATE pictures SET title=? WHERE id=?").run(id,title);
+            db.prepare("UPDATE pictures SET title=? WHERE id=?").run(title,id);
         },
         updateDescription(id,description) {
-            db.prepare("UPDATE pictures SET description=? WHERE id=?").run(id,description);
+            db.prepare("UPDATE pictures SET description=? WHERE id=?").run(description,id);
         },
     }
 

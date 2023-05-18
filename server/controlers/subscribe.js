@@ -18,9 +18,10 @@ module.exports={
         if (otherid == myid) {
             throw new HTTPError("Vous ne pouvez pas vous désabonner de votre profil.");
         }
-        /*if (model.subscriptions.checksubscribe({ from_id: myid, to_id: otherid }) === 'undefined') {
-        throw new HTTPError("Vous ne pouvez pas vous désabonner d'un compte que vous ne suivez pas.");
-        }*/
+        const subscriptionCount = model.subscriptions.checksubscribe({ from_id: myid, to_id: otherid }).count;
+        if (subscriptionCount == 0) {
+            throw new HTTPError("Vous ne pouvez pas vous désabonner d'un compte que vous ne suivez pas.");
+          }    
         model.subscriptions.unsubscribe({from_id:myid, to_id:otherid});
      }
 }
