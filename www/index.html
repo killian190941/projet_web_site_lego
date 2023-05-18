@@ -20,31 +20,33 @@
         <div class="menu">
             <ul>
                 <li><a href="#home" class="home">Accueil</a></li>
-                <li><a href="#monProfil" class="nologin">Page personnelle</a></li>
+                <li><a href="#monProfil" class="nologin">Ma Page</a></li>
                 <li><a href="#profile" class="nologin">Modifier le profil</a></li>
                 <li><a href="#publish" class="nologin">Ajouter une image</a></li>
-                <li><a href="#listUsers" class="nologin">Liste des utilisateurs</a></li>
-                <li><a href="#lastImages" class="nologin">10 dernières images</a></li>
-                <li><a href="#highScore" class="nologin">top 10 créations</a></li>
+                <li><a href="#listUsers" class="nologin">Liste des users</a></li>
+                <li><a href="#lastImages" class="nologin">10 dernières créations</a></li>
+                <li><a href="#highScore" class="nologin">Top 10 créations</a></li>
             </ul>
         </div>
         <div class="page flex" id="home">
             <h1 style="text-align:center">Bienvenue sur notre site!</h1>
             <h4 id="info" style="text-align:center">Veuillez vous inscrire ou vous authentifier pour continuer.</h4>
             <h5 id="description_concept" style="text-align: center">Instagram AFOL est LE site numéro 1 des adultes fan de LEGO. Il permet aux fans de LEGO à travers le monde de partager leur créations avec d'autres adeptes. Ci-dessous, retrouvez les 10 dernières créations postées par nos membres.</h5>
-            <div class="image-container"></div>
+            <div class="outer-frame">
+                <div class="image-container"></div>
+            </div>
         </div>
         <div class="page flex" id="monProfil">
             <h1 id="myInfo" style="text-align: center;"></h1>
             <span>
-                <h4 style="text-align: center; display: inline-block" id="pagePerso">Mes Créations</h4>
+                <h3 style="text-align: center; display: inline-block" id="pagePerso">Mes Créations</h3>
                 <input type="submit" id="switchProfil" class="roundedButton" value="mes abonnements">
             </span>
             <p></p>
-            <div class="grid-container" id="mesCreas">                          
+            <div class="outer-frame" id="mesCreas">                          
                 <div class="image-container"></div>     
             </div>   
-            <div class="grid-container invisible" id="mesAbos">
+            <div class="outer-frame invisible" id="mesAbos">
                 <div class="image-container"></div>
             </div>   
         </div>
@@ -55,7 +57,9 @@
                 <a href="#" id="unSubscribeBtn" class="roundedButton">Se désabonner</a>
             </span>            
             <h3 style="text-align:center">Ses créations :</h3>
-            <div class="image-container"></div>
+            <div class="outer-frame">
+                <div class="image-container"></div>
+            </div>
         </div>   
         <div class="page flex" id="login">
             <h1>Authentifiez-vous!</h1> <br>
@@ -115,9 +119,9 @@
             </div>
         </div>
         <div class="page flex" id="profile">
-            <h4>Modifier le profil</h4>
+            <h1>Modifier le profil</h1>
             <div class="box" id="newMDP">
-                <h5>Modifier le mot de passe</h5>
+                <h2>Modifier le mot de passe</h2>
                 <form>
                     <table>
                         <tbody>
@@ -143,7 +147,7 @@
             <div class="box" id="newMail">    
                 <tr>
                 </tr>
-                <h5>Modifier l'email</h5>
+                <h2>Modifier l'email</h2>
                 <form>
                     <table>
                         <tbody>
@@ -176,9 +180,11 @@
             </table>
         </div>
         <div class="page flex", id="modifImage">
+            <h1>Modification de l'image</h1>
             <div class="box">
-                <h3>Modification de l'image</h3>
-                <div class="image-container"></div>
+                <div class="outer-frame">
+                    <div class="image-container"></div>
+                </div>
                 <form id="monImage">
                     <table>
                         <tbody>
@@ -203,11 +209,11 @@
             </div>
         </div>
         <div class="page flex" id="voteImage">
-            <h1 id="titreImage" style="text-align:center"></h1>
+            <h1 id="scoreImage" style="text-align: center;"></h1>
             <br>
-            <h2 id="scoreImage" style="text-align: center;"></h2>
-            <br>
-            <div class="image-container"></div>
+            <div class="outer-frame">
+                <div class="image-container"></div>
+            </div>
             <h3 style="text-align:center" id="voteOuPas">Quelle note donneriez vous à cette création :</h3>
             <span id="noVote">
                 <input type="radio" class="score" name="score" value="1" checked> 1
@@ -220,7 +226,7 @@
             <input type="submit" class="roundedButton" id="retour" value="retour">
         </div>   
         <div class="page flex" id="publish">
-            <h4>Publication d'une création</h4>
+            <h1>Publication d'une création</h1>
             <div class="box">
                 <form>
                     <table>
@@ -251,16 +257,20 @@
             </div>
         </div>
         <div class="page flex" id="lastImages">
-            <h2>Voici les 10 dernières images postées par nos utilisateurs</h2>
-            <div class="image-container"></div>
+            <h1>Voici les 10 dernières images postées par nos utilisateurs</h1>
+            <div class="outer-frame">
+                <div class="image-container"></div>
+            </div>
         </div>
         <div class="page flex" id="highScore">
-            <h2>Voici les 10 créations ayant le plus haut score sur notre site</h2>
-            <div class="image-container"></div>
+            <h1>Voici les 10 créations ayant le plus haut score sur notre site</h1>
+            <div class="outer-frame">
+                <div class="image-container"></div>
+            </div>
         </div>
     </div>
-    <div class="footer">
-        <div>&#x24B8; 2022 Donatien Grolaux </div>
+    <div class="footer flex">
+        <div>&#x24B8; 2023 Sylvain, Marco & Killian </div>
     </div>
     <script src="resources/mispaf.js"></script>
     <script src="views/home.js"></script>

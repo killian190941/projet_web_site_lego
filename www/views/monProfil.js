@@ -50,8 +50,8 @@ mispaf.addPageListener("enter:monProfil", (event) => {
     <span id="description">${mispaf.escape(response.files[i].description)}</span>
     <h4>Score de ${mispaf.escape(response.files[i].score)}/5</h4></td>
     <br>
-    <td><button onclick="deleteImage(${response.files[i].id},'${mispaf.escape(response.files[i].path)}')">Effacer image</button></td>
-    <td><button onclick="modifImage(${response.files[i].id},'${mispaf.escape(response.files[i].title)}','${mispaf.escape(response.files[i].description)}','${mispaf.escape(response.files[i].path)}')">Modifier l'image</button></td>
+    <td><button class="roundedButton" onclick="deleteImage(${response.files[i].id},'${mispaf.escape(response.files[i].path)}')">Effacer image</button></td>
+    <td><button class="roundedButton" onclick="modifImage(${response.files[i].id},'${mispaf.escape(response.files[i].title)}','${mispaf.escape(response.files[i].description)}','${mispaf.escape(response.files[i].path)}')">Modifier l'image</button></td>
 </div>
 </tr>
 `   );
