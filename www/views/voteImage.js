@@ -104,5 +104,6 @@ document.getElementById("validerScore").addEventListener('click', (event)=>{
 
 document.getElementById("retour").addEventListener('click', (event)=>{
     event.preventDefault(); 
-    mispaf.page('monProfil');
-})  
+    let previousPage = sessionStorage.getItem('previousPage') || 'lastImages';
+    mispaf.page(previousPage);
+})

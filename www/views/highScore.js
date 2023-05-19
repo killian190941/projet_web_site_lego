@@ -9,7 +9,7 @@ mispaf.addPageListener("enter:highScore", (event) => {
             for (let i = 0; i < response.files.length; i++) {
                 images.push(`
 <div class="image">
-    <a href="#" onclick="rateImage(${response.files[i].id},'${mispaf.escape(response.files[i].title)}','${mispaf.escape(response.files[i].description)}','${mispaf.escape(response.files[i].path)}',${mispaf.escape(response.files[i].owner_id)},${mispaf.escape(response.files[i].myid)})"> 
+    <a href="#" onclick="rateImage(${response.files[i].id},'${mispaf.escape(response.files[i].title)}','${mispaf.escape(response.files[i].description)}','${mispaf.escape(response.files[i].path)}',${mispaf.escape(response.files[i].owner_id)},${mispaf.escape(response.files[i].myid)}, 'highScore')"> 
     <img src="${mispaf.escape(response.files[i].path)}" 
     alt="${mispaf.escape(response.files[i].title)})"></a> 
     <h3>${mispaf.escape(response.files[i].title)}</h3>

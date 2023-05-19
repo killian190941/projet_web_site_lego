@@ -124,15 +124,16 @@ function modifImage(id,title,description,path) {
     mispaf.page('modifImage');  
 }   
 
-function rateImage(id,title,description,path,owner_id,myid) {
+function rateImage(id, title, description, path, owner_id, myid, previousPage) {
     event.preventDefault();
     imageId = id;
     imageTitle = title;
     imageDescription = description;
     imagePath = path;
+    sessionStorage.setItem('previousPage', previousPage);
     if (myid !== owner_id) {
         mispaf.page('voteImage')
     }
 }
-   
+
    

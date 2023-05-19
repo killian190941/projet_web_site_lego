@@ -121,48 +121,48 @@
             <div class="box" id="newMDP">
                 <h2>Modifier le mot de passe</h2>
                 <form>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="password1">Mot de passe actuel :</label></td>
-                                <td><input type="password" id="password1" name="password1"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password2">Nouveau mot de passe :</label></td>
-                                <td><input type="password" id="password2" name="password2"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="password3">Nouveau mot de passe répété :</label></td>
-                                <td><input type="password" id="password3" name="password3"></td>
-                            </tr>                        
-                            <tr>
-                                <td><input id="newPassword" type="submit" class="roundedButton" value="Ok"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="boxtop">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="password1">Mot de passe actuel :</label></td>
+                                    <td><input type="password" id="password1" name="password1"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="password2">Nouveau mot de passe :</label></td>
+                                    <td><input type="password" id="password2" name="password2"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="password3">Nouveau mot de passe répété :</label></td>
+                                    <td><input type="password" id="password3" name="password3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <input id="newPassword" type="submit" class="roundedButton" value="Ok">
                 </form>
             </div>
-            <div class="box" id="newMail">    
-                <tr>
-                </tr>
+            <div class="box" id="newMail">
                 <h2>Modifier l'email</h2>
                 <form>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="email1">Email actuel :</label></td>
-                                <td><input type="email" id="email1" name="email1"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="email2">Nouvel email :</label></td>
-                                <td><input type="email" id="email2" name="email2"></td>
-                            </tr>
-                            <tr>
-                                <td><input id="newEmail" type="submit" class="roundedButton" value="Ok"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form> 
+                    <div class="boxtop">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="email1">Email actuel :</label></td>
+                                    <td><input type="email" id="email1" name="email1"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email2">Nouvel email :</label></td>
+                                    <td><input type="email" id="email2" name="email2"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <input id="newEmail" type="submit" class="roundedButton" value="Ok">
+                </form>
             </div>
         </div>
         <div class="page flex", id="modifImage">
@@ -171,68 +171,80 @@
                 <div class="image-container"></div>
                 <br>
                 <form id="monImage">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="title">Titre :</label></td>
-                                <td><input type="text" id="newTitle" name="newTitle"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="description">Description :</label></td>
-                                <td><textarea id="newDescription" name="newDescription"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td><input id="validerModif" type="submit" class="roundedButton" value="Ok"></td>
-                                <td><input id="annulerModif" type="submit" class="roundedButton" value="Annuler"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="boxtop">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="title">Titre :</label></td>
+                                    <td><input type="text" id="newTitle" name="newTitle"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="description">Description :</label></td>
+                                    <td><textarea id="newDescription" name="newDescription"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <input id="validerModif" type="submit" class="roundedButton" value="Ok">
+                    <input id="annulerModif" type="submit" class="roundedButton" value="Annuler">
                 </form>
             </div>
-        </div>
+        </div>       
         <div class="page flex" id="voteImage">
             <h1 id="scoreImage" style="text-align: center;"></h1>
-            <br>
-            <div class="image-container"></div>
-            <h4 style ="text-align: center" id = "nbrVotes" class="invisible"></h4>
-            <h3 style="text-align:center" id="voteOuPas">Quelle note donneriez vous à cette création :</h3>
-            <span id="noVote">
-                <input type="radio" class="score" name="score" value="1" checked> 1
-                <input type="radio" class="score" name="score" value="2"> 2
-                <input type="radio" class="score" name="score" value="3"> 3
-                <input type="radio" class="score" name="score" value="4"> 4
-                <input type="radio" class="score" name="score" value="5"> 5
-            </span>
-            <div class="buttons-container">
-                <a href="#" id="validerScore" class="roundedButton">Ok</a>
-                <input type="submit" class="roundedButton" id="retour" value="retour">
+            <div class="box">
+                <div class="image-container"></div>
+                <h4 style ="text-align: center" id = "nbrVotes" class="invisible"></h4>
+                <h3 style="text-align:center" id="voteOuPas">Quelle note donneriez vous à cette création :</h3>
+                <form>
+                    <div class="boxtop">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="radio" class="score" name="score" value="1" checked> 1
+                                        <input type="radio" class="score" name="score" value="2"> 2
+                                        <input type="radio" class="score" name="score" value="3"> 3
+                                        <input type="radio" class="score" name="score" value="4"> 4
+                                        <input type="radio" class="score" name="score" value="5"> 5
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <a href="#" id="validerScore" class="roundedButton">Ok</a>
+                    <input type="submit" class="roundedButton" id="retour" value="retour">
+                </form>
             </div>
             <br>
-        </div>   
+        </div>          
         <div class="page flex" id="publish">
             <h1>Publication d'une création</h1>
             <div class="box">
                 <form>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><label for="title">Titre :</label></td>
-                                <td><input type="titre" id="title" name="title"></td>
-                            </tr>
-                            <tr>
-                                <td><label for="description">Description :</label></td>
-                                <td><textarea id="description" name="description"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td><label for="file">Fichier :</label></td>
-                                <td><input type="file" id="file" name="file"></td>
-                            </tr>
-                            <tr >
-                                <td><input id="envoyer" type="submit" class="roundedButton" value="Ajouter image"></td>
-                                <td><input type="submit" value="Annuler" class="roundedButton"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="boxtop">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="title">Titre :</label></td>
+                                    <td><input type="titre" id="title" name="title"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="description">Description :</label></td>
+                                    <td><textarea id="description" name="description"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="file">Fichier :</label></td>
+                                    <td><input type="file" id="file" name="file"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <input id="envoyer" type="submit" class="roundedButton" value="Ajouter image">
+                    <input type="submit" value="Annuler" class="roundedButton">
                 </form>
             </div>
         </div>
