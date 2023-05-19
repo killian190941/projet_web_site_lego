@@ -10,9 +10,6 @@ module.exports = ({ db }) => {
         list() {
             return db.prepare("SELECT * FROM users").all();
         },
-        delete(id) {
-            return db.prepare("DELETE FROM users WHERE id=?").run(id);
-        },
         updatePassword(id,password) {
             db.prepare("UPDATE users SET password=? WHERE id=?").run(password,id);
         },

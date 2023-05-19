@@ -109,17 +109,16 @@ body {
     justify-content: center;
 }
 
-.roundedButton {
-    float:right;
-    margin-right:2px;
-    font-size:14px;
-    cursor:pointer;
-}
-
 .button-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.roundedButton {
+    margin-right: 2px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .error {
@@ -148,7 +147,7 @@ body {
 .menu {
     background-color:rgb(228, 0, 3);
     border-right:solid 1px rgb(228, 0, 3);
-    min-width: 100px;
+    min-width: 101px;
 }
 
 .menu ul {
@@ -221,6 +220,7 @@ body:not(.nologin) #home, body:not(.nologin) .home {
     display:none;
     min-width: 100%;
     min-height: 100%;
+    margin-bottom: 60px;
 }
 
 .active, .flex.active {

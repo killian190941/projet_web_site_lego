@@ -18,12 +18,12 @@
         }
         event.preventDefault(); 
         mispaf.ajax({
-            url:"/items/add", // important, c'est le chemin que l'on recuper dans le controler items.js
+            url:"/items/add", 
             type:'POST',
             data: form, 
             success() {
                 alert("Objet publié.");
-                mispaf.page(mispaf.page()); // refresh
+                mispaf.page('monProfil'); 
             },
             error(message) {
                 alert(message);

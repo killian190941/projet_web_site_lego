@@ -7,7 +7,7 @@ module.exports={
     checkVote({ model, params, user }) {
         let myid = model.users.getByLogin(user.login).id;
         let count = model.scores.checkScore({user_id:myid, picture_id:params.id}).count;
-        let scoreData = model.scores.myScore({ user_id: myid, picture_id: params.id });
+        let scoreData = model.scores.myScore({ user_id:myid, picture_id: params.id });
         let score = scoreData ? scoreData.score : 0;
 
 return { count: count, score: score };
@@ -20,9 +20,13 @@ return { count: count, score: score };
         };
         return {score:score.toFixed(2)};
     },
+    nbrVotes({ model, params }) {
+        let count = model.scores.nbrVotes({picture_id:params.id}).count;
+        return {count:count};
+    },
     topTenImages({config, model, user }) {    
         let myid = model.users.getByLogin(user.login).id;   
-        let topImages = model.scores.getTopImages();
+        let topImages = model.getImages.getTopImages();
         // Prepare the data to return
         let data = topImages.map(image => {
             return {

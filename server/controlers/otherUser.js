@@ -5,7 +5,7 @@ module.exports={
     otherUserProfile({model, config, params, user}) {
         let myid = model.users.getByLogin(user.login).id; 
         let otherUsername = params.username; // Get the username from the AJAX request
-        let otherUserImages = model.otherUser.otherUserImagesConnected(otherUsername);
+        let otherUserImages = model.getImages.getOtherUserImagesConnected(otherUsername);
         for (let i = 0; i < otherUserImages.length; i++) {
            
             if (otherUserImages[i].score === null) {
@@ -33,7 +33,7 @@ module.exports={
     },
     otherUserProfileNotConnected({model, config, params}) {
         let otherUsername = params.username; // Get the username from the AJAX request
-        let otherUserImages = model.otherUser.otherUserImages(otherUsername);
+        let otherUserImages = model.getImages.getOtherUserImages(otherUsername);
 
         // Prepare the data to return
         let data = otherUserImages.map(image => {

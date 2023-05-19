@@ -13,13 +13,8 @@ module.exports = ({ db }) => {
         scoreTotal({picture_id}) {
             return db.prepare("SELECT AVG(score) AS scoreTotal FROM scores WHERE picture_id = ?").get(picture_id);
         },
-        getTopImages() {
-            let result = db.prepare(`SELECT pictures.id, pictures.title, pictures.description, pictures.path, pictures.owner_id, AVG(scores.score) AS 'score'
-                                    FROM pictures 
-                                    JOIN scores ON pictures.id = scores.picture_id
-                                    GROUP BY pictures.id
-                                    ORDER BY score DESC LIMIT 10`).all();
-            return result;
-        }
+        nbrVotes({picture_id}) {
+            return db.prepare("SELECT COUNT(*) as count FROM scores WHERE picture_id =?").get(picture_id);
+        },
     }
 }

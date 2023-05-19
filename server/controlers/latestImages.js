@@ -5,7 +5,7 @@ module.exports={
     latestImagesConnected({config, model, user}) {       
         let myid = model.users.getByLogin(user.login).id;      
         // Query the database to get latest images and user information
-        let latestImages = model.latestImages.getLatestImages();
+        let latestImages = model.getImages.getLatestImages();
         for (let i = 0; i < latestImages.length; i++) {
             if (latestImages[i].score === null) {
               latestImages[i].score = "non noté";
@@ -33,7 +33,7 @@ module.exports={
     },
     latestImagesNotConnected({config, model}) {           
         // Query the database to get latest images and user information
-        let latestImages = model.latestImages.getLatestImages();
+        let latestImages = model.getImages.getLatestImages();
         for (let i = 0; i < latestImages.length; i++) {
             if (latestImages[i].score === null) {
               latestImages[i].score = "non noté";

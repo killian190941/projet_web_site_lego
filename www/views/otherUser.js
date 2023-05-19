@@ -71,7 +71,7 @@ document.getElementById("subscribeBtn").addEventListener('click',(event)=>{
         data:{username:otherUserName},
         success() {
             alert("Vous vous êtes bien abonné à ce profil.");
-            mispaf.page('monProfil'); // refresh
+            mispaf.page('monProfil'); 
         },
         error(message) {
             alert(message);
@@ -88,7 +88,7 @@ document.getElementById("unSubscribeBtn").addEventListener('click',(event)=>{
         data:{username:otherUserName},
         success() {
             alert("Vous vous êtes bien désabonné de ce profil.");
-            mispaf.page('monProfil'); // refresh
+            mispaf.page('monProfil'); 
         },
         error(message) {
             alert(message);

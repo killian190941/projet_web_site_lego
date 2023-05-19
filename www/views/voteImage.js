@@ -42,6 +42,21 @@ mispaf.addPageListener("enter:voteImage", (event) => {
             alert(response);
         }
     });
+    mispaf.ajax({
+        url: "/vote/nbrVotes",
+        type: 'POST',
+        data:{id:imageId},
+        success(response) {
+            count = response.count;
+            if (score != 0) {
+                document.getElementById('nbrVotes').classList.remove('invisible')
+                document.getElementById('nbrVotes').innerText="L'image a reçu "+count+" vote(s).";
+            } 
+        },
+        error(response) {
+            alert(response);
+        }
+    });
     let container = document.querySelector('#voteImage .image-container');
     let image = [];
     image.push(`

@@ -20,10 +20,9 @@
         <div class="menu">
             <ul>
                 <li><a href="#home" class="home">Accueil</a></li>
-                <li><a href="#monProfil" class="nologin">Ma Page</a></li>
+                <li><a href="#monProfil" class="nologin">Page personnelle</a></li>
                 <li><a href="#profile" class="nologin">Modifier le profil</a></li>
-                <li><a href="#publish" class="nologin">Ajouter une image</a></li>
-                <li><a href="#listUsers" class="nologin">Liste des users</a></li>
+                <li><a href="#publish" class="nologin">Ajouter une création</a></li>
                 <li><a href="#lastImages" class="nologin">10 dernières créations</a></li>
                 <li><a href="#highScore" class="nologin">Top 10 créations</a></li>
             </ul>
@@ -48,7 +47,7 @@
             </div>   
             <div class="outer-frame invisible" id="mesAbos">
                 <div class="image-container"></div>
-            </div>   
+            </div>    
         </div>
         <div class="page flex" id="otherUser">
             <h1 id="nameUser" style="text-align:center"></h1>
@@ -76,7 +75,6 @@
                             <label for="inputpassword">Mdp</label> : <input type="password" name="password"
                                 id="inputpassword">
                         </div>
-                        <div class="error"></div>
                     </div>
                     <hr>
                     <input type="submit" value="Annuler" class="roundedButton">
@@ -167,41 +165,25 @@
                 </form> 
             </div>
         </div>
-        <div class="page flex" id="listUsers">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Identifiant</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
         <div class="page flex", id="modifImage">
             <h1>Modification de l'image</h1>
             <div class="box">
-                <div class="outer-frame">
-                    <div class="image-container"></div>
-                </div>
+                <div class="image-container"></div>
+                <br>
                 <form id="monImage">
                     <table>
                         <tbody>
                             <tr>
-                                <td><label for="title">Titre</label></td>
+                                <td><label for="title">Titre :</label></td>
                                 <td><input type="text" id="newTitle" name="newTitle"></td>
                             </tr>
                             <tr>
-                                <td><label for="description">Description</label></td>
-                                <td><input type="text" id="newDescription" name="newDescription"></td>
+                                <td><label for="description">Description :</label></td>
+                                <td><textarea id="newDescription" name="newDescription"></textarea></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="error"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input id="validerModif" type="submit" class="roundedButton" value="Ok"></td>
-                                <td colspan="2"><input id="annulerModif" type="submit" class="roundedButton" value="Annuler"></td>
+                                <td><input id="validerModif" type="submit" class="roundedButton" value="Ok"></td>
+                                <td><input id="annulerModif" type="submit" class="roundedButton" value="Annuler"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -211,9 +193,8 @@
         <div class="page flex" id="voteImage">
             <h1 id="scoreImage" style="text-align: center;"></h1>
             <br>
-            <div class="outer-frame">
-                <div class="image-container"></div>
-            </div>
+            <div class="image-container"></div>
+            <h4 style ="text-align: center" id = "nbrVotes" class="invisible"></h4>
             <h3 style="text-align:center" id="voteOuPas">Quelle note donneriez vous à cette création :</h3>
             <span id="noVote">
                 <input type="radio" class="score" name="score" value="1" checked> 1
@@ -221,9 +202,12 @@
                 <input type="radio" class="score" name="score" value="3"> 3
                 <input type="radio" class="score" name="score" value="4"> 4
                 <input type="radio" class="score" name="score" value="5"> 5
-                <a href="#" id="validerScore" class="roundedButton">Ok</a>
             </span>
-            <input type="submit" class="roundedButton" id="retour" value="retour">
+            <div class="buttons-container">
+                <a href="#" id="validerScore" class="roundedButton">Ok</a>
+                <input type="submit" class="roundedButton" id="retour" value="retour">
+            </div>
+            <br>
         </div>   
         <div class="page flex" id="publish">
             <h1>Publication d'une création</h1>
@@ -243,13 +227,9 @@
                                 <td><label for="file">Fichier :</label></td>
                                 <td><input type="file" id="file" name="file"></td>
                             </tr>
-                            <tr>
-                                <td colspan="2" class="error"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><input id="envoyer" type="submit" class="roundedButton"
-                                    value="Ajouter image"></td>
-                                <td> <input type="submit" value="Annuler" class="roundedButton"></td>
+                            <tr >
+                                <td><input id="envoyer" type="submit" class="roundedButton" value="Ajouter image"></td>
+                                <td><input type="submit" value="Annuler" class="roundedButton"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -269,8 +249,8 @@
             </div>
         </div>
     </div>
-    <div class="footer flex">
-        <div>&#x24B8; 2023 Sylvain, Marco & Killian </div>
+    <div class="footer">
+        <div>&#x24B8; 2023 Sylvain, Marco & Killian</div>
     </div>
     <script src="resources/mispaf.js"></script>
     <script src="views/home.js"></script>
@@ -283,7 +263,6 @@
     <script src="views/publish.js"></script>
     <script src="views/register.js"></script>
     <script src="views/login.js"></script>
-    <script src="views/listUsers.js"></script>
     <script src="views/profile.js"></script>
     <script>
         // Leave this script at the bottom of this page

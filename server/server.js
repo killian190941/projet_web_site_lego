@@ -127,7 +127,7 @@ function loadModel(dir) {
         if (files[i].endsWith(".js")) { // if it ends by .js
             let model = require(path.join(__dirname, dir, files[i]))(configWithDB); // dynamically require it, expects a function which is given the db
             context.model[files[i].substring(0, files[i].length - 3)] = model;
-            context.model.latestImages = require('./models/latestImages.js')({ db });
+
         }
     }
 }
