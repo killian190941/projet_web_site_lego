@@ -89,7 +89,8 @@ document.getElementById("validerScore").addEventListener('click', (event)=>{
                 data:{score:resultatVote,id:imageId},
                 success() {
                     alert("Vote effectué");
-                    mispaf.page('monProfil');
+                    let previousPage = sessionStorage.getItem('previousPage') || 'lastImages';
+                    mispaf.page(previousPage);
                 },
                 error(message) {
                     alert(message);
